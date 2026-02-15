@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adeptus Miniaturium | Sanctus Painting</title>
+
+<style>
+    @font-face {
+  font-family: 'Share Tech Mono';
+  src: url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Share+Tech+Mono&display=swap");
+}
+
+:root {
+    --void-black: #050505;
+    --blood-god: #8a0b0b;
+    --plasma-glow: #ff3333;
+    --imperial-gold: #c6a34d;
+    --dirty-gold: #8c7335;
+    --plasteel: #2f353b;
+    --mechanicus-green: #23382c;
+    --parchment: #c2bbad;
+    --crt-line: rgba(18, 16, 16, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace; /* Rollo pantalla de datos */
+    background-color: var(--void-black);
+    color: var(--parchment);
+    letter-spacing: 1px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* EFECTO CRT / SCANLINES - Esto es bomba */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1000;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+header {
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)),
+        url('https://www.transparenttextures.com/patterns/dark-matter.png'); 
+    border-bottom: 4px double var(--imperial-gold);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--imperial-gold);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px rgba(198, 163, 77, 0.6);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--blood-god);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--blood-god);
+}
+
+/* NAVEGACION ESTILO PANEL DE CONTROL */
+nav {
+    background-color: #0f1114;
+    border-bottom: 1px solid var(--dirty-gold);
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #666;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border-right: 1px solid #222;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--parchment);
+    background-color: var(--blood-god);
+    box-shadow: inset 0 0 10px #000;
+}
+
+nav a::before {
+    content: '[ ';
+    opacity: 0;
+    transition: 0.3s;
+    color: var(--imperial-gold);
+}
+nav a::after {
+    content: ' ]';
+    opacity: 0;
+    transition: 0.3s;
+    color: var(--imperial-gold);
+}
+nav a:hover::before, nav a:hover::after {
+    opacity: 1;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--parchment);
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+/* Adornos a los lados del titulo */
+section h2::before, section h2::after {
+    content: "+++";
+    color: var(--dirty-gold);
+    margin: 0 15px;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+/* TARJETAS TECH-HERESY - Con esquinas recortadas */
+.card {
+    background: #111;
+    border: 1px solid var(--dirty-gold);
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    /* Recorte estilo Sci-Fi */
+    clip-path: polygon(
+        20px 0, 100% 0, 
+        100% calc(100% - 20px), calc(100% - 20px) 100%, 
+        0 100%, 0 20px
+    );
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* Linea decorativa interior */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border: 1px dashed #333;
+    pointer-events: none;
+    z-index: -1;
+    clip-path: polygon(
+        20px 0, 100% 0, 
+        100% calc(100% - 20px), calc(100% - 20px) 100%, 
+        0 100%, 0 20px
+    );
+}
+
+.card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* BOTONES PURITY SEAL */
+.btn-imperial {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #000;
+    border: 1px solid var(--imperial-gold);
+    color: var(--imperial-gold);
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btn-imperial:hover {
+    background: var(--blood-god);
+    color: #fff;
+    border-color: var(--plasma-glow);
+    box-shadow: 0 0 20px var(--blood-god);
+    text-shadow: 0 0 5px #fff;
+}
+
+/* GRID DE FOTOS */
+.grid-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.foto-frame {
+    position: relative;
+    border: 2px solid var(--plasteel);
+    padding: 5px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.foto-frame:hover {
+    border-color: var(--imperial-gold);
+    transform: translateY(-5px);
+}
+
+.foto-placeholder {
+    height: 300px;
+    background: radial-gradient(circle, #222, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #444;
+    border: 1px solid #222;
+}
+
+.foto-placeholder span {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.foto-caption {
+    background: var(--plasteel);
+    color: #aaa;
+    padding: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* FORMULARIOS */
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid var(--plasteel);
+    color: var(--imperial-gold);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--blood-god);
+    box-shadow: 0 0 10px rgba(138, 11, 11, 0.3);
+    background-color: #000;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #020202;
+    border-top: 1px solid var(--dirty-gold);
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.skull-icon {
+    font-size: 2rem;
+    color: var(--parchment);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ANIMACIONES */
+@keyframes textFlicker {
+    0% { opacity: 1; }
+    95% { opacity: 1; }
+    96% { opacity: 0.8; }
+    97% { opacity: 1; }
+    98% { opacity: 0.5; }
+    99% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+h1, h2 {
+    animation: textFlicker 5s infinite;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Adeptus Miniaturium</h1>
+    <p>Sanctificando Plástico para la Gloria del Imperio</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#nexus">Nexus</a></li>
+        <li><a href="#pict-capturas">Pict-Capturas</a></li>
+        <li><a href="#vox-transmision">Vox-Comms</a></li>
+        <li><a href="#datos-biologis">Magos Marcos</a></li>
+    </ul>
+</nav>
+
+<section id="nexus">
+    <h2>+++ Inicializando Lógica +++</h2>
+    <div class="card">
+        <p style="color: var(--imperial-gold); font-size: 0.9rem;">// PENSAMIENTO DEL DÍA: LA ESPERANZA ES EL PRIMER PASO HACIA LA DECEPCIÓN.</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+        <p>Bienvenido al manufactorum personal del <strong>Artífice Marcos</strong>. Aquí, las miniaturas grises son purgadas de su falta de color y bendecidas con pigmentos sagrados, lavados de Nuln Oil y pincel seco ritual.</p>
+        <p>No pintamos juguetes. Forjamos veteranos de la Larga Guerra.</p>
+        <br>
+        <a href="#vox-transmision" class="btn-imperial">Iniciar Protocolo de Encargo</a>
+    </div>
+</section>
+
+<section id="pict-capturas">
+    <h2>+++ Archivos de Batalla +++</h2>
+    <div class="grid-fotos">
+        <div class="foto-frame">
+            <div class="foto-placeholder">
+                <span>☠</span>
+            </div>
+            <div class="foto-caption">Muestra A-1: Astartes Pattern</div>
+        </div>
+        <div class="foto-frame">
+            <div class="foto-placeholder">
+                <span>⚙</span>
+            </div>
+            <div class="foto-caption">Muestra B-2: Engine War</div>
+        </div>
+        <div class="foto-frame">
+            <div class="foto-placeholder">
+                <span>⚔</span>
+            </div>
+            <div class="foto-caption">Muestra C-3: Xenos Filth</div>
+        </div>
+    </div>
+</section>
+
+<section id="vox-transmision">
+    <h2>+++ Súplica al Manufactorum +++</h2>
+    <div class="card">
+        <p>Rellena los datos para solicitar la atención del Artífice. Sé preciso, el tiempo es un recurso limitado del Emperador.</p>
+        <form>
+            <input type="text" placeholder="Designación del Comandante (Nombre)">
+            <input type="email" placeholder="Frecuencia Vox (Email)">
+            <textarea rows="6" placeholder="Detalla los requerimientos de la misión: Esquema de color, Facción, Nivel de degradado..."></textarea>
+            <button type="submit" class="btn-imperial">Transmitir a la Noosphere</button>
+        </form>
+    </div>
+</section>
+
+<section id="datos-biologis">
+    <h2>+++ Archivo: Magos Marcos +++</h2>
+    <div class="card">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px;">
+                <p><strong>[ESTADO]</strong>: Operativo<br>
+                <strong>[UBICACIÓN]</strong>: Sector Baeticus (Andalucía)<br>
+                <strong>[ESPECIALIDAD]</strong>: Grimdark Realista, Weathering pesado, OSL.</p>
+                <p>Marcos no pinta para que queden bonitos en la estantería. Pinta para que parezca que tus muñecos han sobrevivido a un bombardeo orbital en Istvaan V. Aquí hay barro, sangre y oscuridad.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.tech-card {
+    background: #111 !important; 
+    border: 1px solid var(--dirty-gold);
+    padding: 40px;
+    position: relative;
+    clip-path: polygon(
+        20px 0, 100% 0, 
+        100% calc(100% - 20px), calc(100% - 20px) 100%, 
+        0 100%, 0 20px
+    );
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.tech-card::before {
+    content: "";
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border: 1px dashed #333;
+    pointer-events: none;
+    z-index: -1;
+    clip-path: polygon(
+        20px 0, 100% 0, 
+        100% calc(100% - 20px), calc(100% - 20px) 100%, 
+        0 100%, 0 20px
+    );
+}
+
+.tech-card p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}

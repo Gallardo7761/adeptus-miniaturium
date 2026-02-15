@@ -27,7 +27,7 @@ const PasswordInput = ({ value, onChange, name = "password" }) => {
           value={value}
           placeholder=""
           onChange={onChange}
-          className="rounded-4 pe-5"
+          className="rounded-0 pe-5"
         />
       </FloatingLabel>
 

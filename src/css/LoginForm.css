@@ -1,53 +1,76 @@
-/* ================================
-   LOGIN - CARD CONTAINER (VISUAL)
-================================== */
-
 .login-card {
-  background-color: var(--login-bg) !important;
-  color: var(--text-color);
-  box-shadow: 0 0 10px var(--shadow-color);
-  
+  background: #111 !important;
+  border: 1px solid var(--dirty-gold);
+  color: var(--parchment);
+  padding: 40px;
+  clip-path: polygon(
+    20px 0, 100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%, 0 20px
+  );
+  box-shadow: 0 0 25px rgba(0,0,0,0.9);
+  position: relative;
 }
 
-/* ================================
-     INPUTS VISUALES
-  ================================== */
+.login-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed #222;
+  pointer-events: none;
+  clip-path: inherit;
+}
 
 input.form-control {
-  background-color: var(--input-bg);
-  color: var(--input-text);
-  border: 1px solid var(--input-border);
-  
+  background-color: rgba(0,0,0,0.8) !important;
+  border: 1px solid var(--plasteel) !important;
+  color: var(--imperial-gold) !important;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 
-/* ================================
-     LABELS PERSONALIZADAS
-  ================================== */
-
-.form-floating>label {
-  font-family: 'Product Sans';
-  font-size: 1.1em;
-  color: var(--label-color);
+input.form-control:focus {
+  background-color: #000 !important;
+  border-color: var(--blood-god) !important;
+  box-shadow: 0 0 10px rgba(138, 11, 11, 0.4) !important;
+  color: var(--imperial-gold) !important;
 }
 
-.form-floating>label::after {
+.form-floating > label {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--dirty-gold);
+}
+
+.form-floating > label::after {
   background-color: transparent !important;
 }
 
-/* ================================
-     BOTÓN VISUAL
-  ================================== */
-
 .login-button {
-  font-family: 'Product Sans' !important;
-  font-size: 1.3em !important;
-  font-weight: bold !important;
-  background-color: var(--login-btn-bg) !important;
-  color: var(--login-btn-text) !important;
-  
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase;
+  background: #000 !important;
+  border: 1px solid var(--imperial-gold) !important;
+  color: var(--imperial-gold) !important;
+  padding: 15px 40px !important;
+  clip-path: polygon(
+    10px 0, 100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%, 0 10px
+  );
+  transition: 0.4s;
 }
 
 .login-button:hover {
-  background-color: var(--login-btn-hover) !important;
-  color: var(--login-btn-text-hover) !important;
+  background: var(--blood-god) !important;
+  border-color: var(--plasma-glow) !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px var(--blood-god);
+  text-shadow: 0 0 5px #fff;
 }

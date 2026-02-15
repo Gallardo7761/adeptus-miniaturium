@@ -1,19 +1,10 @@
 import '@/css/Header.css';
-import { Link } from 'react-router-dom';
 
-const Header = () => {
-
-    return (
-        <header className={`text-center bg-img`}>
-            <div className="m-0 p-5 mask">
-                <div className="d-flex flex-column justify-content-center align-items-center h-100">
-                    <Link to='/' className='text-decoration-none'>
-                        <h1 className='header-title m-0 text-white shadowed'>Tu página web</h1>
-                    </Link>
-                </div>
-            </div>
-        </header>
-    );
-}
+const Header = () => (
+  <header className="py-5 text-center position-relative">
+    <h1 className="mb-2">Adeptus Miniaturium</h1>
+    <p className="m-0">SUBTITULO SUBTITULO SUBTITULO SUBTITULO</p>
+  </header>
+);
 
 export default Header;

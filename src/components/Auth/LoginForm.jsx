@@ -54,7 +54,7 @@ const LoginForm = () => {
     return (
         <CustomContainer>
             <ContentWrapper>
-                <div className="login-card card shadow p-5 rounded-5 mx-auto col-12 col-md-8 col-lg-6 col-xl-5 d-flex flex-column gap-4">
+                <div className="login-card card shadow rounded-0 mx-auto col-12 col-md-8 col-lg-6 col-xl-5 d-flex flex-column gap-4">
                     <h1 className="text-center">Inicio de sesión</h1>
                     <Form className="d-flex flex-column gap-5" onSubmit={handleSubmit}>
                         <div className="d-flex flex-column gap-3">
@@ -73,7 +73,7 @@ const LoginForm = () => {
                                     name="emailOrUserName"
                                     value={formState.emailOrUserName}
                                     onChange={handleChange}
-                                    className="rounded-4"
+                                    className="rounded-0"
                                 />
                             </FloatingLabel>
 
@@ -83,7 +83,7 @@ const LoginForm = () => {
                                 name="password"
                             />
 
-                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                            {/*<div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
                                 <Form.Check
                                     type="checkbox"
                                     name="keepLoggedIn"
@@ -92,10 +92,10 @@ const LoginForm = () => {
                                     value={formState.keepLoggedIn}
                                     onChange={(e) => { formState.keepLoggedIn = e.target.checked; setFormState({ ...formState }) }}
                                 />
-                                {/*<Link disabled to="#" className="muted">
+                                <Link disabled to="#" className="muted">
                                     Olvidé mi contraseña
-                                </Link>*/}
-                            </div>
+                                </Link>
+                            </div>*/}
                         </div>
 
                         {error && (
@@ -105,7 +105,7 @@ const LoginForm = () => {
                         )}
 
                         <div className="text-center">
-                            <Button type="submit" className="w-75 padding-4 rounded-4 border-0 shadow-sm login-button">
+                            <Button type="submit" className="w-75 padding-4 rounded-0 border-0 shadow-sm login-button">
                                 Iniciar sesión
                             </Button>
                         </div>

@@ -1,28 +1,22 @@
-import Header from '@/components/Header.jsx';
-import NavBar from '@/components/NavBar.jsx';
-import Footer from '@/components/Footer.jsx';
-import { Route, Routes, useLocation } from 'react-router-dom'
-import ProtectedRoute from '@/components/Auth/ProtectedRoute.jsx'
-import useSessionRenewal from '@/hooks/useSessionRenewal'
-import { CONSTANTS } from '@/util/constants'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import NavBar from '@/components/NavBar/NavBar'
+import Home from '@/pages/Home'
+import { Route, Routes } from 'react-router-dom'
+import Login from './pages/Login'
 
-import Home from '@/pages/Home.jsx'
-import Building from '@/pages/Building.jsx'
-
-function App() {
-  const routesWithFooter = ["/"];
-
+const App = () => {
   return (
     <>
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/*" element={<Building />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
-      {routesWithFooter.includes(useLocation().pathname) ? <Footer /> : null}
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
