@@ -1,18 +1,21 @@
 import '@/css/NavBar.css';
 import NavItem from './NavItem';
-
-const navItems = [
-  { label: 'Inicio', href: '/#inicio' },
-  { label: 'Muestras', href: '/#muestras' },
-  { label: 'Pedidos', href: '/#pedidos' },
-  { label: 'Sobre Markcus', href: '/#sobre-mi' },
-  { label: "🇪🇸", href: '#' },
-  { label: "Login", href: '/login' }
-];
+import LanguageButton from '../LanguageButton';
+import { useTranslation } from 'react-i18next';
 
 const NavBar = () => {
-  const centerItems = navItems.slice(0, navItems.length - 2);
-  const rightItems = navItems.slice(-2);
+  const { t } = useTranslation();
+
+  const navItems = [
+    { label: t("nav.inicio.label"), href: `/#${t("nav.inicio.href")}` },
+    { label: t("nav.muestras.label"), href: `/#${t("nav.muestras.href")}` },
+    { label: t("nav.pedidos.label"), href: `/#${t("nav.pedidos.href")}` },
+    { label: t("nav.sobre.label"), href: `/#${t("nav.sobre.href")}` },
+    { label: t("nav.login.label"), href: `/${t("nav.login.href")}` }
+  ];
+
+  const centerItems = navItems.slice(0, navItems.length - 1);
+  const rightItems = navItems.slice(-1);
 
   return (
     <nav className="nav-container">
@@ -23,8 +26,9 @@ const NavBar = () => {
         ))}
 
         <li className="position-absolute end-0 d-flex">
+          <LanguageButton as='navitem' index={0} total={rightItems.length + 1} />
           {rightItems.map((item, index) => (
-            <NavItem key={index} item={item} index={index} total={rightItems.length} />
+            <NavItem key={index} item={item} index={index + 1} total={rightItems.length + 1} />
           ))}
         </li>
 

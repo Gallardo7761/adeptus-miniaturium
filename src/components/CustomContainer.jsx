@@ -2,8 +2,10 @@ import PropTypes from 'prop-types';
 
 const CustomContainer = ({ children }) => {
     return (
-        <main className="mx-4 my-5">
-            {children}
+        <main className="container my-5">
+            <div className="d-flex flex-column gap-5">
+                {children}
+            </div>
         </main>
     );
 }

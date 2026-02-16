@@ -4,9 +4,11 @@ import '@/css/PasswordInput.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash, faKey } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const PasswordInput = ({ value, onChange, name = "password" }) => {
   const [show, setShow] = useState(false);
+  const { t } = useTranslation();
 
   const toggleShow = () => setShow(prev => !prev);
 
@@ -15,10 +17,7 @@ const PasswordInput = ({ value, onChange, name = "password" }) => {
       <FloatingLabel
         controlId="passwordInput"
         label={
-          <>
-            <FontAwesomeIcon icon={faKey} className="me-2" />
-            Contraseña
-          </>
+          t("login.password_label")
         }
       >
         <Form.Control

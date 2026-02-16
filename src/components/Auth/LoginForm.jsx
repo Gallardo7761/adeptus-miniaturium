@@ -11,10 +11,12 @@ import CustomContainer from '@/components/CustomContainer.jsx';
 import ContentWrapper from '@/components/ContentWrapper.jsx';
 
 import '@/css/LoginForm.css';
+import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
     const { login, error } = useContext(AuthContext);
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const [formState, setFormState] = useState({
         emailOrUserName: "",
@@ -47,7 +49,7 @@ const LoginForm = () => {
             await login(loginBody);
             navigate("/");
         } catch (err) {
-            console.error("Error de login:", err.message);
+            console.error("Error:", err.message);
         }
     };
 
@@ -55,16 +57,13 @@ const LoginForm = () => {
         <CustomContainer>
             <ContentWrapper>
                 <div className="login-card card shadow rounded-0 mx-auto col-12 col-md-8 col-lg-6 col-xl-5 d-flex flex-column gap-4">
-                    <h1 className="text-center">Inicio de sesión</h1>
+                    <h1 className="text-center">{t("login.title")}</h1>
                     <Form className="d-flex flex-column gap-5" onSubmit={handleSubmit}>
                         <div className="d-flex flex-column gap-3">
                             <FloatingLabel
                                 controlId="floatingUsuario"
                                 label={
-                                    <>
-                                        <FontAwesomeIcon icon={faUser} className="me-2" />
-                                        Usuario o Email
-                                    </>
+                                    t("login.user_label")
                                 }
                             >
                                 <Form.Control
@@ -82,20 +81,6 @@ const LoginForm = () => {
                                 onChange={handleChange}
                                 name="password"
                             />
-
-                            {/*<div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-                                <Form.Check
-                                    type="checkbox"
-                                    name="keepLoggedIn"
-                                    label="Mantener sesión iniciada"
-                                    className="text-secondary"
-                                    value={formState.keepLoggedIn}
-                                    onChange={(e) => { formState.keepLoggedIn = e.target.checked; setFormState({ ...formState }) }}
-                                />
-                                <Link disabled to="#" className="muted">
-                                    Olvidé mi contraseña
-                                </Link>
-                            </div>*/}
                         </div>
 
                         {error && (
@@ -105,8 +90,8 @@ const LoginForm = () => {
                         )}
 
                         <div className="text-center">
-                            <Button type="submit" className="w-75 padding-4 rounded-0 border-0 shadow-sm login-button">
-                                Iniciar sesión
+                            <Button type="submit" className="border-0 w-75 padding-4 rounded-0  shadow-sm login-button">
+                                {t("login.button")}
                             </Button>
                         </div>
                     </Form>

@@ -1,7 +1,7 @@
 .login-card {
   background: #111 !important;
-  border: 1px solid var(--dirty-gold);
-  color: var(--parchment);
+  border: 1px solid var(--dirty-gold) !important;
+  color: var(--parchment) !important;
   padding: 40px;
   clip-path: polygon(
     20px 0, 100% 0,
@@ -42,7 +42,7 @@ input.form-control:focus {
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--dirty-gold);
+  color: var(--dirty-gold) !important;
 }
 
 .form-floating > label::after {
@@ -51,9 +51,9 @@ input.form-control:focus {
 
 .login-button {
   font-family: 'Cinzel', serif !important;
-  font-weight: 700 !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
   letter-spacing: 2px !important;
-  text-transform: uppercase;
   background: #000 !important;
   border: 1px solid var(--imperial-gold) !important;
   color: var(--imperial-gold) !important;
@@ -69,8 +69,8 @@ input.form-control:focus {
 
 .login-button:hover {
   background: var(--blood-god) !important;
-  border-color: var(--plasma-glow) !important;
   color: #fff !important;
-  box-shadow: 0 0 20px var(--blood-god);
-  text-shadow: 0 0 5px #fff;
+  border-color: var(--plasma-glow) !important;
+  box-shadow: 0 0 20px var(--blood-god) !important;
+  text-shadow: 0 0 5px #fff !important;
 }

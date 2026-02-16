@@ -1,0 +1,54 @@
+{
+  "header": {
+    "subtitle": "Markcus Garklios    The Executioner Crusader"
+  },
+  "nav": {
+    "inicio": { "label": "Inicio", "href": "inicio" },
+    "muestras": { "label": "Portafolio", "href": "portafolio" },
+    "pedidos": { "label": "Comisiones", "href": "comisiones" },
+    "sobre": { "label": "Sobre Markcus", "href": "sobre-mi" },
+    "login": { "label": "Login", "href": "login" }
+  },
+  "home": {
+    "inicio_title": "+++ INICIALIZANDO +++",
+    "inicio_thought": "// PENSAMIENTO DEL DÍA: LA ESPERANZA ES EL PRIMER PASO HACIA LA DECEPCIÓN.",
+    "inicio_welcome": "Bienvenido al manufactorum personal de Markcus. Aquí, las miniaturas grises son purgadas de su falta de color y bendecidas con pigmentos sagrados, lavados de Nuln Oil y pincel seco ritual.",
+    "inicio_note": "No pintamos juguetes. Forjamos veteranos de la Larga Guerra.",
+    "inicio_button": "Iniciar Protocolo de Encargo",
+    
+    "muestras_title": "+++ Portafolio +++",
+    "muestras": [
+      { "icon": "☠", "title": "Muestra A-1: Astartes Pattern" },
+      { "icon": "⚙", "title": "Muestra B-2: Engine War" },
+      { "icon": "⚔", "title": "Muestra C-3: Xenos Filth" }
+    ],
+
+    "pedidos_title": "+++ Súplica al Manufactorum +++",
+    "pedidos_text": "Rellena los datos para solicitar la atención del Artífice. Sé preciso, el tiempo es un recurso limitado del Emperador.",
+    "pedidos_name": "Designación del Comandante (Nombre)",
+    "pedidos_email": "Frecuencia Vox (Email)",
+    "pedidos_requirements": "Detalla los requerimientos de la misión: Esquema de color, Facción, Nivel de degradado...",
+    "pedidos_button": "Transmitir",
+
+    "sobre_title": "+++ Archivo: Markcus +++",
+    "sobre_status": {
+      "k": "[ESTADO]:",
+      "v": "Operativo"
+    },
+    "sobre_location": {
+      "k": "[UBICACIÓN]:",
+      "v": "Andalucía"
+    },
+    "sobre_specialty": {
+      "k": "[ESPECIALIDAD]:",
+      "v": "Pintura acrílica, detalles realistas"
+    },
+    "sobre_text": "Soy Markcus, un leal servidor del Emperador. Mi propósito es expandir los dominios del Emperador, a través de wargames y modelado de miniaturas. Warhammer y la pintura de miniaturas son mi afición y pasión. Por eso pongo mis habilidades como pintor al servicio de todos vosotros que queréis ampliar vuestra colección, ya seáis veteranos o principiantes. Puedo pintar cualquier cosa: Marines Espaciales, Guardia Imperial, Necrones, Orkos, etc. También puedo pintar miniaturas que no sean de Warhammer."
+  }, 
+  "login": {
+    "title": "Autenticación requerida",
+    "user_label": "Identificador",
+    "password_label": "Clave",
+    "button": "Acceder"
+  }
+}

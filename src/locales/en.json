@@ -1,0 +1,60 @@
+{
+  "header": {
+    "subtitle": "Markcus Garklios    The Executioner Crusader"
+  },
+  "nav": {
+    "inicio": { "label": "Home", "href": "home" },
+    "muestras": { "label": "Portfolio", "href": "portfolio" },
+    "pedidos": { "label": "Comissions", "href": "comissions" },
+    "sobre": { "label": "About Markcus", "href": "about-me" },
+    "login": { "label": "Login", "href": "login" }
+  },
+  "home": {
+    "inicio_title": "+++ INITIALIZING +++",
+    "inicio_thought": "// THOUGHT OF THE DAY: HOPE IS THE FIRST STEP TOWARD DISAPPOINTMENT.",
+    "inicio_welcome": "Welcome to Markcus' personal manufactorum. Here, grey miniatures are purged of their lack of color and blessed with sacred pigments, Nuln Oil washes, and ritual dry brushing.",
+    "inicio_note": "We don't paint toys. We forge veterans of the Long War.",
+    "inicio_button": "Start Order Protocol",
+    "muestras_title": "+++ Portfolio +++",
+    "muestras": [
+      {
+        "icon": "☠",
+        "title": "Sample A-1: Astartes Pattern"
+      },
+      {
+        "icon": "⚙",
+        "title": "Sample B-2: Engine War"
+      },
+      {
+        "icon": "⚔",
+        "title": "Sample C-3: Xenos Filth"
+      }
+    ],
+    "pedidos_title": "+++ Plea to the Manufactorum +++",
+    "pedidos_text": "Fill in the details to request the attention of the Artificer. Be precise, time is an Emperor-limited resource.",
+    "pedidos_name": "Commander Designation (Name)",
+    "pedidos_email": "Vox Frequency (Email)",
+    "pedidos_requirements": "Detail mission requirements: Color scheme, Faction, Shading level...",
+    "pedidos_button": "Transmit",
+    "sobre_title": "+++ File: Markcus +++",
+    "sobre_status": {
+      "k": "[STATUS]:",
+      "v": "Operational"
+    },
+    "sobre_location": {
+      "k": "[LOCATION]:",
+      "v": "Andalusia"
+    },
+    "sobre_specialty": {
+      "k": "[SPECIALTY]:",
+      "v": "Acrilic painting, realistic details"
+    },
+    "sobre_text": "I´m Markcus, a loyal servant of the Emperor. My purpose is to expand the Emperor's domains, through wargaming and miniature modeling. Warhammer and miniature painting are my hobby and passion. That's why I put my skills as a painter at the service of all of you who want to increase your collection, even if you're a veteran or a beginner. I can paint anything: Space Marines, Imperial Guard, Necrons, Orks, etc. I can also paint miniatures that aren't from Warhammer."
+  },
+  "login": {
+    "title": "Authentication required",
+    "user_label": "Identifier",
+    "password_label": "Key",
+    "button": "Proceed"
+  }
+}
