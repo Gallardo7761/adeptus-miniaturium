@@ -6,7 +6,7 @@
     "inicio": { "label": "Home", "href": "home" },
     "muestras": { "label": "Portfolio", "href": "portfolio" },
     "pedidos": { "label": "Comissions", "href": "comissions" },
-    "sobre": { "label": "About Markcus", "href": "about-me" },
+    "sobre": { "label": "About", "href": "about-me" },
     "login": { "label": "Login", "href": "login" }
   },
   "home": {
@@ -30,7 +30,7 @@
         "title": "Sample C-3: Xenos Filth"
       }
     ],
-    "pedidos_title": "+++ Plea to the Manufactorum +++",
+    "pedidos_title": "+++ Comission +++",
     "pedidos_text": "Fill in the details to request the attention of the Artificer. Be precise, time is an Emperor-limited resource.",
     "pedidos_name": "Commander Designation (Name)",
     "pedidos_email": "Vox Frequency (Email)",

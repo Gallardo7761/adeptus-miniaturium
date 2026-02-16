@@ -23,7 +23,7 @@
       { "icon": "⚔", "title": "Muestra C-3: Xenos Filth" }
     ],
 
-    "pedidos_title": "+++ Súplica al Manufactorum +++",
+    "pedidos_title": "+++ Comisión +++",
     "pedidos_text": "Rellena los datos para solicitar la atención del Artífice. Sé preciso, el tiempo es un recurso limitado del Emperador.",
     "pedidos_name": "Designación del Comandante (Nombre)",
     "pedidos_email": "Frecuencia Vox (Email)",

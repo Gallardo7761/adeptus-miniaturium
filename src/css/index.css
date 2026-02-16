@@ -242,3 +242,67 @@ section {
 }
 
 h1, h2 { animation: textFlicker 5s infinite; }
+
+@media (max-width: 991.98px) {
+  section {
+    padding: 60px 16px !important;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    margin: 0 10px;
+    font-size: 1.1rem;
+  }
+
+  .foto-placeholder {
+    height: 240px;
+  }
+
+  .btn-imperial {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  .tech-input,
+  .tech-textarea {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  section {
+    padding: 40px 12px !important;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    margin: 0 8px;
+    font-size: 1rem;
+  }
+
+  .foto-placeholder {
+    height: 200px;
+  }
+
+  .foto-placeholder span {
+    font-size: 2.5rem;
+  }
+
+  .foto-caption {
+    font-size: 0.75rem;
+  }
+
+  .btn-imperial {
+    width: 100%;
+    text-align: center;
+  }
+}

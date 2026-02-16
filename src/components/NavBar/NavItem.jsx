@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
-const NavItem = ({ item, index, onClick }) => {
+const NavItem = ({ item, index, onClick, onCloseNav }) => {
   let borderClass = `${index === 0 ? "border-left border-right" : "border-right"}`;
 
   const handleClick = (e) => {
@@ -9,6 +9,10 @@ const NavItem = ({ item, index, onClick }) => {
       onClick();
     } else if (item.href === "#") {
       e.preventDefault();
+    }
+
+    if (onCloseNav) {
+      onCloseNav();
     }
   };
 
