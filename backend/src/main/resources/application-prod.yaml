@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1/
+
+spring:
+  datasource:
+    url: jdbc:mariadb://mariadb:3306/miniaturium
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: org.mariadb.jdbc.Driver
+
+logging:
+  level:
+    org.hibernate.SQL: WARN
