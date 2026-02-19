@@ -5,7 +5,13 @@ const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="py-5 text-center position-relative">
+    <header className="imperial-header py-5 text-center position-relative">
+      <img
+        src="/images/purity.png"
+        alt="Purity Seal"
+        className="purity-seal left"
+      />
+
       <h1 className="mb-2">Adeptus Miniaturium</h1>
       <p className="m-0">{t("header.subtitle")}</p>
     </header>
