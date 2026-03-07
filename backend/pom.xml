@@ -23,13 +23,6 @@
 		<java.version>25</java.version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>gitea</id>
-			<url>https://git.miarma.net/api/packages/Gallardo7761/maven</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<!-- Spring Boot -->
 		<dependency>
@@ -49,6 +42,22 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.42</version>
+			<scope>compile</scope>
+		</dependency>
 		<!-- JWT -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -66,12 +75,6 @@
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.miarma</groupId>
-			<artifactId>backlib</artifactId>
-			<version>1.1.0</version>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 

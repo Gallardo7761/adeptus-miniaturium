@@ -1,7 +1,7 @@
 package es.adeptusminiaturium.backend.service;
 
 import es.adeptusminiaturium.backend.repository.UserRepository;
-import es.adeptusminiaturium.backend.security.CustomUserDetails;
+import es.adeptusminiaturium.backend.security.CustomPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,7 +19,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepo.findByUserName(username)
-                .map(CustomUserDetails::new)
+                .map(CustomPrincipal::new)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
     }
 }

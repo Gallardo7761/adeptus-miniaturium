@@ -2,7 +2,6 @@ package es.adeptusminiaturium.backend.security;
 
 import es.adeptusminiaturium.backend.enums.UserStatus;
 import es.adeptusminiaturium.backend.model.User;
-import es.adeptusminiaturium.backend.enums.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,11 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-public class CustomUserDetails implements UserDetails {
+public class CustomPrincipal implements UserDetails {
 
     private final User user;
 
-    public CustomUserDetails(User user) {
+    public CustomPrincipal(User user) {
         this.user = user;
     }
 
